@@ -1,0 +1,56 @@
+name: Publish V2 Sniper v2.1.0
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/release-v2.1.0.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    name: Build and publish release archive
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Validate extension files
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check content.js
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          manifest=json.loads(Path('manifest.json').read_text())
+          assert manifest['manifest_version'] == 3
+          assert manifest['version'] == '2.1.0'
+          for name in ('manifest.json', 'content.js', 'popup.html', 'icon.png'):
+              assert Path(name).is_file(), f'Missing {name}'
+          assert Path('icon.png').read_bytes().startswith(b'\x89PNG\r\n\x1a\n')
+          print('Extension manifest, syntax, and files validated')
+          PY
+
+      - name: Package V2 Sniper extension
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p staging/v2-sniper
+          cp manifest.json content.js popup.html icon.png staging/v2-sniper/
+          (cd staging && zip -q -r ../V2-Sniper-2.1.zip v2-sniper)
+          unzip -t V2-Sniper-2.1.zip
+
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh release create v2.1.0 V2-Sniper-2.1.zip \
+            --title "V2 Sniper v2.1.0" \
+            --notes-file RELEASE_NOTES_v2.1.0.md \
+            --target "$GITHUB_SHA" \
+            --latest
