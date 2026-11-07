@@ -6,11 +6,11 @@ V2 Sniper is a personal browser automation project for monitoring the Amazon A t
 
 ## Project status
 
-**Pre-release — no downloadable GitHub release is available yet.**
+**V2.1.0 source files are now available on the `main` branch.** No separately packaged GitHub Release has been published yet.
 
-The source files and a tested release ZIP must be added before anyone can install V2 Sniper from this repository. Please do not mistake GitHub's **Code → Download ZIP** for an installable extension until the extension files are present.
+To download the current source, choose **Code → Download ZIP**, extract the archive, and load the folder containing `manifest.json` in Chrome. The original V2.1 ZIP has not yet been attached to a GitHub Release. This build has not been independently tested in the current Amazon website environment.
 
-## Features in the reviewed local V2.1 build
+## Features in the V2.1 source build
 
 - Shift Finder page watcher using `MutationObserver`
 - Automatic interaction with “Add Shift,” confirmation, and “Done” controls
@@ -24,9 +24,9 @@ The source files and a tested release ZIP must be added before anyone can instal
 
 > **Accuracy warning:** The reviewed V2.1 build can classify an attempt as successful without a verified server-side confirmation. Its success counter and notifications must not be treated as proof that a shift was added. Confirm any shift in your official schedule.
 
-## Installation (after the extension files are published)
+## Installation
 
-1. Download a packaged release from the [Releases page](../../releases), or download the source folder containing `manifest.json`, `content.js`, `popup.html`, and `icon.png`.
+1. In this repository, select **Code → Download ZIP**. The archive contains `manifest.json`, `content.js`, `popup.html`, and `icon.png` at its root.
 2. If downloaded as a ZIP, extract it.
 3. On **desktop Google Chrome**, open `chrome://extensions`.
 4. Enable **Developer mode**.
@@ -49,7 +49,7 @@ Open Shift Finder, review the settings in the V2 Sniper panel, then click **Watc
 
 ## Privacy and permissions
 
-The reviewed local V2.1 source uses Chrome's **storage** and **notifications** permissions and declares access to `atoz.amazon.work`. Settings and recent history are stored using `chrome.storage.local`. No external analytics service or credential collection was found in the reviewed files. Future releases should be reviewed individually; do not share account passwords, cookies, or exported logs containing personal information.
+The V2.1 source uses Chrome's **storage** and **notifications** permissions and declares access to `atoz.amazon.work`. Settings and recent history are stored using `chrome.storage.local`. No external analytics service or credential collection was found in the reviewed files. Future releases should be reviewed individually; do not share account passwords, cookies, or exported logs containing personal information.
 
 ## Responsible use
 
