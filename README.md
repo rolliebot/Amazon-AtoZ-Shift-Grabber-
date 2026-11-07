@@ -6,9 +6,9 @@ V2 Sniper is a personal browser automation project for monitoring the Amazon A t
 
 ## Project status
 
-**V2.1.0 source files are now available on the `main` branch.** No separately packaged GitHub Release has been published yet.
+**V2.1.0 is publicly released.** Download the installable ZIP from the [official v2.1.0 release](../../releases/tag/v2.1.0).
 
-To download the current source, choose **Code → Download ZIP**, extract the archive, and load the folder containing `manifest.json` in Chrome. The original V2.1 ZIP has not yet been attached to a GitHub Release. This build has not been independently tested in the current Amazon website environment.
+The release includes a packaged extension ZIP and its source files are also available in the repository. This build has not been independently tested in the current Amazon website environment.
 
 ## Features in the V2.1 source build
 
@@ -26,11 +26,11 @@ To download the current source, choose **Code → Download ZIP**, extract the ar
 
 ## Installation
 
-1. In this repository, select **Code → Download ZIP**. The archive contains `manifest.json`, `content.js`, `popup.html`, and `icon.png` at its root.
-2. If downloaded as a ZIP, extract it.
+1. Download **[V2-Sniper-2.1.zip](../../releases/download/v2.1.0/V2-Sniper-2.1.zip)** from the official [v2.1.0 release](../../releases/tag/v2.1.0), rather than the auto-generated source archive.
+2. Extract the downloaded ZIP; it contains a `v2-sniper` folder with `manifest.json`, `content.js`, `popup.html`, and `icon.png`.
 3. On **desktop Google Chrome**, open `chrome://extensions`.
 4. Enable **Developer mode**.
-5. Choose **Load unpacked** and select the folder containing `manifest.json`.
+5. Choose **Load unpacked** and select the extracted `v2-sniper` folder containing `manifest.json`.
 6. Open Amazon A to Z's Shift Finder in Chrome. The V2 Sniper panel should appear on the supported page.
 
 Chrome for iOS and Android does not support loading this desktop Chrome extension.
