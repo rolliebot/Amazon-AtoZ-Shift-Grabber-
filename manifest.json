@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "V2 Sniper",
+  "version": "2.1.0",
+  "description": "Watches the Amazon A to Z shift finder page and assists with claiming available shifts.",
+  "permissions": ["notifications", "storage"],
+  "host_permissions": ["https://atoz.amazon.work/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://atoz.amazon.work/shifts/schedule/find*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": { "48": "icon.png" }
+  },
+  "icons": { "48": "icon.png" }
+}
