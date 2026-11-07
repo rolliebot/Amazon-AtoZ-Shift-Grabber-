@@ -35,6 +35,18 @@ The release includes a packaged extension ZIP and its source files are also avai
 
 Chrome for iOS and Android does not support loading this desktop Chrome extension.
 
+## Screenshots
+
+These screenshots show the V2 Sniper interface on the Amazon A to Z Shift Finder page. **They were captured from the earlier V2.0 interface**, so some labels and behavior may differ from the published v2.1.0 package. Schedule-related information in the deployed screenshot has been redacted.
+
+### Deployed on Amazon A to Z
+
+![V2 Sniper overlay deployed on the Amazon A to Z Shift Finder page, with shift information redacted](assets/screenshots/deployed-overlay.png)
+
+### Watching for available shifts
+
+![V2 Sniper on-page control panel showing its active Watching state](assets/screenshots/watching-state.png)
+
 ## Usage
 
 Open Shift Finder, review the settings in the V2 Sniper panel, then click **Watch**. Click **Stop** to stop monitoring. Always confirm the final result in Amazon A to Z itself; the extension may miss state changes, process an unavailable shift, or misinterpret page messages.
